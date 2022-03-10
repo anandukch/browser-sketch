@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "sketcher",
+  "version": "1.0.0",
+  "description": "Google Chrome",
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "unlimitedStorage",
+    "storage",
+    "background",
+    "browsingData",
+    "cookies",
+    "pageCapture"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "1.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["scripts/content.js"]
+    }
+  ]
+}

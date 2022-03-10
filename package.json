@@ -1,0 +1,13 @@
+{
+  "name": "sketch-marker",
+  "version": "1.0.3",
+  "description": "",
+  "scripts": {
+    "dev": "webextension-toolbox dev",
+    "build": "webextension-toolbox build",
+    "build-all": "webextension-toolbox build chrome && webextension-toolbox build firefox && webextension-toolbox build opera && webextension-toolbox build edge"
+  },
+  "devDependencies": {
+    "webextension-toolbox": "^3.0.0"
+  }
+}

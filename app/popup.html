@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button {
+      height: 30px;
+      width: 100%;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="c">click</button>
+</body>
+<script src="scripts/popup.js"></script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Refined GitHub Feeds</title>
+  </head>
+  <body>
+    <div class="container" id="main">
+      <div class="row">
+        <div class="title-wrapper">Refined GitHub Feeds</div>
+      </div>
+      <div class="row">
+        <div class="label-wrapper">
+          <label for="board" class="status">board</label>
+        </div>
+        <div class="toggle-wrapper">
+          <label class="switch">
+            <input type="checkbox" id="board" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="label-wrapper">
+          <button id="clear">clear</button>
+        </div>
+        <div class="label-wrapper">
+          <button id="eraser">eraser</button>
+        </div>
+        
+      </div>
+      <input type="color" name="color" id="color">
+      <div class="row">
+        <div class="label-wrapper">
+          <label for="pen" class="status">pen</label>
+        </div>
+        <div class="toggle-wrapper">
+          <label class="switch">
+            <input type="checkbox" id="pen" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="label-wrapper">
+          <label for="pen-size" class="status">pen-size</label>
+        </div>
+        <div class="toggle-wrapper">
+          
+            <input type="range" min="1" max="100" id="pen-size" />
+          
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/popup.js"></script>
+  </body>
+</html>
