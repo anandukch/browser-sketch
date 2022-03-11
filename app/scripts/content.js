@@ -4,11 +4,7 @@ var canvas = document.createElement("canvas");
 let ctx;
 let penSize = initialState["pen-size"];
 let clr = initialState["color"];
-// browser.runtime
-//   .sendMessage({ text: "tab_id" })
-//   .then(function (response) {
-//     console.log(response);
-//   });
+
 browser.runtime.onMessage.addListener(messageHandler);
 async function messageHandler(request, sender, sendResponse) {
   if (request.type === "check") {
@@ -66,7 +62,6 @@ function draw(e) {
 }
 function execute() {
   canvas.addEventListener("mousedown", (e) => {
-    console.log("mousedown");
     drawing = true;
     draw(e);
   });
@@ -83,4 +78,3 @@ function clearCanvas() {
 }
 execute();
 
-// ctx.arc(x,y,10,0,Math.PI*2,false);

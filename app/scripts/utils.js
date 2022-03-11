@@ -1,7 +1,5 @@
 export const initialState = {
   board: false,
-  eraser: false,
-  pen: false,
   color: "#000000",
   "pen-size": 5,
 };
@@ -13,7 +11,7 @@ export async function getLocal() {
     saved = storage["mark"];
   } else {
     saved = initialState;
-    await browser.storage.local.set({ ["mark"]: saved ,["tabid"]: []});
+    await browser.storage.local.set({ ["mark"]: initialState ,["tabid"]: 0});
   }
   return saved;
 }

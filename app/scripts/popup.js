@@ -2,6 +2,8 @@ const { getLocal, initialState } = require("./utils.js");
 
 let SavedState = null;
 async function onLoad() {
+  SavedState = await getLocal();
+  console.log(SavedState);
   const currentTabId = await browser.tabs
     .query({ active: true, currentWindow: true })
     .then((tabs) => tabs[0].id);
@@ -13,8 +15,6 @@ async function onLoad() {
       ["mark"]: SavedState,
       ["tabid"]: currentTabId,
     });
-  } else {
-    SavedState = await getLocal();
   }
   const savedStateKeys = Object.keys(SavedState);
 
@@ -24,6 +24,7 @@ async function onLoad() {
       checkbox.value = SavedState["pen-size"];
       checkbox.addEventListener("click", onClickHandler);
     } else if (key == "color") {
+      checkbox.value = SavedState["color"];
       checkbox.addEventListener("change", onClickHandler);
     } else {
       checkbox.checked = savedStateKeys.includes(key) ? SavedState[key] : true;
@@ -69,4 +70,3 @@ async function onClickHandler(e) {
 }
 
 onLoad();
-
