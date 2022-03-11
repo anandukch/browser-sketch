@@ -24,7 +24,9 @@ async function messageHandler(request, sender, sendResponse) {
           clearCanvas();
         case "board":
           createCanvas();
+          document.body.style["user-select"] = "none";
           document.body.appendChild(canvas);
+          
           break;
         default:
           break;
