@@ -4,7 +4,6 @@ var canvas = document.createElement("canvas");
 let ctx;
 let penSize = initialState["pen-size"];
 let clr = initialState["color"];
-
 browser.runtime.onMessage.addListener(messageHandler);
 async function messageHandler(request, sender, sendResponse) {
   if (request.type === "check") {
@@ -26,7 +25,7 @@ async function messageHandler(request, sender, sendResponse) {
           createCanvas();
           document.body.style["user-select"] = "none";
           document.body.appendChild(canvas);
-          
+
           break;
         default:
           break;
@@ -79,4 +78,3 @@ function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 execute();
-
