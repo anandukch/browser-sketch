@@ -1,4 +1,4 @@
-console.log("content.js is running");
+
 const { getLocal, initialState } = require("./utils.js");
 var canvas = document.createElement("canvas");
 let ctx;

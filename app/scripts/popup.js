@@ -3,13 +3,11 @@ const { getLocal, initialState } = require("./utils.js");
 let SavedState = null;
 async function onLoad() {
   SavedState = await getLocal();
-  console.log(SavedState);
   const currentTabId = await browser.tabs
     .query({ active: true, currentWindow: true })
     .then((tabs) => tabs[0].id);
   const storedTabid = await browser.storage.local.get("tabid");
   if (storedTabid.tabid != currentTabId) {
-    console.log("tabid changed");
     SavedState = initialState;
     await browser.storage.local.set({
       ["mark"]: SavedState,
@@ -59,12 +57,7 @@ async function onClickHandler(e) {
     type: "check",
     key: key,
   };
-  // browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-  //   console.log(tabs[0].id);
-  //   browser.tabs.sendMessage(tabs[0].id, msg);
-  // });
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    console.log(tabs[0].id);
     chrome.tabs.sendMessage(tabs[0].id, msg);
   });
 }
