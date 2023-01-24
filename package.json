@@ -8,6 +8,9 @@
     "build-all": "webextension-toolbox build chrome && webextension-toolbox build firefox && webextension-toolbox build opera && webextension-toolbox build edge"
   },
   "devDependencies": {
-    "webextension-toolbox": "^3.0.0"
+    "webextension-toolbox": "latest"
+  },
+  "dependencies": {
+    "@webextension-toolbox/webextension-toolbox": "^5.2.2"
   }
 }
