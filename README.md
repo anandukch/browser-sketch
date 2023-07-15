@@ -1,4 +1,4 @@
-# Wed Sketcher
+# Web Sketcher
 
 A web drawing extension which can be used to draw,mark and highlight contents on a webpage.
 
